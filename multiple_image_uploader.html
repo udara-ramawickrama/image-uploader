@@ -76,56 +76,9 @@
     }
 
     const deleteMultipleImage = (index) => {
-            multipleImagesArray.splice(index, 1);
-            displayMultipleImages();
-        }
-        // //get file chooser element
-        // const input = document.getElementById('imgSelect');
-
-    // //get image display div element
-    // const output = document.getElementById('imgDisplayDiv');
-
-    // //declare a variable to hold uploaded images
-    // let image_array = [];
-
-    // //create an event listner for the change event(we use file chooser to change the image)
-    // input.addEventListener('change', () => {
-    //     const files = input.files;
-    //     //loop through the files arr
-    //     for (let i = 0; i <= files.length; i++) {
-    //         //check the type of the current element of the loop
-    //         if (!files[i].type.match("image")) continue;
-
-    //         //check whether it contains dublicate images or not
-    //         if (image_array.every(image => image.name !== files[i].name))
-    //             image_array.push(files[i]);
-    //     }
-
-    //     display_image();
-
-    // })
-
-    // const display_image = () => {
-    //     //console.log(arr);
-    //     let images = "";
-    //     image_array.forEach((image, index) => {
-    //         images += `<div class="col-sm-3 p-1">
-    //                         <div class="image_holder">
-    //                             <img src="${URL.createObjectURL(image)}" alt="image" style="width:100%">
-    //                             <span class="btn btn-danger btn-sm text-white btn-block" onclick="delete_im age(${index})">
-    //                                 <i class="fa fa-times-circle"></i>&nbsp;Remove
-    //                             </span>
-    //                         </div>
-    //                    </div>`
-    //     });
-    //     output.innerHTML = images;
-    // }
-
-    // //create remove function
-    // const delete_image = (index) => {
-    //     image_array.splice(index, 1);
-    //     display_image(image_array);
-    // }
+        multipleImagesArray.splice(index, 1);
+        displayMultipleImages();
+    }
 </script>
 
 </html> !
