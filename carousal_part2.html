@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My To Do App Info </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar_toggler_demo01">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="col-sm-1">
+                        <button type="button" id="btn_add_new_task_color_change" class="btn btn-block btn-light  text-dark   font-weight rounded-circle">
+                            <i class="fa-sharp fa-solid fa-moon"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="col d-flex justify-content-center p-5">
+        <div class="card card shadow mt-5" style="width: 40%;">
+            <div class="text-center mt-5 mb-5">
+                <img src="" class="rounded w-75" alt="Cinque Terre" height="300rem" id="image_file">
+            </div>
+            <div class="card-body text-center mt-3">
+                <div class="row mb-1">
+                    <h5 id="image_name">Susan Smith</h5>
+                </div>
+                <div class="text-primary">
+                    <h6 id="sub_tilte">Solution Architect</h6>
+                </div>
+                <div class="">
+                    <p id="info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset she</p>
+                </div>
+                <button type="button" id="btn_previous" class="btn  btn-dark   text-white   font-weight rounded-circle">
+                    <i class="fa-solid fa-less-than"></i>
+                </button>
+                <button type="button" id="btn_next" class="btn  btn-dark text-white font-weight rounded-circle">
+                    <i class="fa-solid  fa-greater-than"></i>
+                </button>
+            </div>
+            <div class="card-footer bg-primary  text-center">
+                <button type="button" class="btn btn- btn-dark rounded-pill" id="btn_random">
+                   Surprise Me
+                </button>
+            </div>
+        </div>
+
+</body>
+<script>
+    const reviews = [{
+        id: 1,
+        name: 'Susan Smith',
+        subtitle: 'Solution Architect',
+        image: "images/1.jpg",
+        info: "1111Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 2,
+        name: 'Sebastian Norwich',
+        subtitle: 'AWS Engineer',
+        image: "images/2.jpg",
+        info: "222222222Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 3,
+        name: 'Salsa Gabriel',
+        subtitle: 'Web Developer',
+        image: "images/3.jpg",
+        info: "33333333Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 4,
+        name: 'Kapil Sharma',
+        subtitle: 'System Engineer',
+        image: "images/4.jpg",
+        info: "44444444444Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 5,
+        name: 'Bobby Bowman',
+        subtitle: 'Senior Web Developer',
+        image: "images/5.jpg",
+        info: "55555555Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 6,
+        name: 'Jeffry Wanderer',
+        subtitle: 'UI Designer',
+        image: "images/6.jpg",
+        info: "666666666Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 7,
+        name: 'Nathalia Marko',
+        subtitle: 'Web Developer',
+        image: "images/7.jpg",
+        info: "777777777777Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, {
+        id: 8,
+        name: 'Anitha Bhaath',
+        subtitle: 'UI/UX Engineer',
+        image: "images/8.jpg",
+        info: "8888888888Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+            " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,\n" +
+            " when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n" +
+            "It has survived not only five centuries, but also the leap into electronic typesetting,\n" +
+            "remaining essentially unchanged."
+    }, ];
+
+    let image_file = document.querySelector('#image_file');
+    let image_name = document.querySelector('#image_name');
+    let sub_tilte = document.querySelector('#sub_tilte');
+    let info = document.querySelector('#info');
+    let btn_previous = document.querySelector('#btn_previous');
+    let btn_next = document.querySelector('#btn_next');
+    let btn_random = document.querySelector('#btn_random');
+
+    //declare a variable to decide the current index of the display
+    let current_item = 0;
+
+    //create a function to view the image related to the current item 
+    const show_image = () => {
+        const item = reviews[current_item];
+        image_file.src = item.image;
+        image_name.textContent = item.name;
+        sub_tilte.textContent = item.subtitle;
+        info.textContent = item.info;
+
+    }
+
+    //load the page(to view zero index of the object) 
+    window.addEventListener('DOMContentLoaded', () => {
+        show_image();
+    })
+
+    //create a function to next button
+    const load_next = () => {
+        current_item++
+        //reviws index count
+        if (current_item > reviews.length - 1) {
+            current_item = 0;
+        }
+        show_image();
+    }
+    btn_next.addEventListener('click', () => {
+        load_next();
+    })
+
+    //creat setinterval method to auto play the images
+    setInterval(() => {
+        load_next();
+    }, 3000);
+
+    //create a function for the previoue btn
+    const load_previous = () => {
+        current_item--
+        if (current_item < 0) {
+            current_item = reviews.length - 1;
+        }
+        show_image();
+    }
+
+    btn_previous.addEventListener('click', () => {
+        load_previous();
+    })
+
+    btn_random.addEventListener('click', () => {
+        current_item = Math.floor(Math.random() * reviews.length);
+        show_image();
+    })
+</script>
+
+
+</html>
